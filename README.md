@@ -1,57 +1,38 @@
-# 🚀 Getting started with Strapi
+# Anya
 
-Strapi comes with a full featured [Command Line Interface](https://docs.strapi.io/dev-docs/cli) (CLI) which lets you scaffold and manage your project in seconds.
+This project is designed to handle WebSocket messages and store them in a SQLite database. It uses Strapi as the CMS and Socket.IO for real-time communication.
 
-### `develop`
+## Installation
+1. Clone the repository:
 
-Start your Strapi application with autoReload enabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-develop)
+    - git clone https://github.com/xeroxPanda32/anya.git
 
-```
-npm run develop
-# or
-yarn develop
-```
+2. Install dependencies:
+    - cd anya
+    - npm install
 
-### `start`
+3. Set up environment variables:
+- Create a .env file in the root of your project with the following content:
 
-Start your Strapi application with autoReload disabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-start)
+  - HOST=0.0.0.0
+  - PORT=1337
+  - DATABASE_CLIENT=sqlite
+  - DATABASE_FILENAME=../../database/mydatabase.db
 
-```
-npm run start
-# or
-yarn start
-```
+4. Start the Strapi server:
+   - npm run develop
 
-### `build`
+## Usage   
+- Open your browser and go to http://localhost:1337/admin.
+- Log in using your Strapi credentials.
+- Go to Content-Manager, create a collection message of type text and publish it.
+- hit http://localhost:1337 in Postman
 
-Build your admin panel. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-build)
 
-```
-npm run build
-# or
-yarn build
-```
+## Structure
+- config/database.js: Configuration for SQLite database.
+- writeMessageToDb.js: Module for writing 
+- WebSocket messages to the database.
+- index.js: Strapi plugin for handling WebSocket communication.
 
-## ⚙️ Deployment
 
-Strapi gives you many possible deployment options for your project including [Strapi Cloud](https://cloud.strapi.io). Browse the [deployment section of the documentation](https://docs.strapi.io/dev-docs/deployment) to find the best solution for your use case.
-
-## 📚 Learn more
-
-- [Resource center](https://strapi.io/resource-center) - Strapi resource center.
-- [Strapi documentation](https://docs.strapi.io) - Official Strapi documentation.
-- [Strapi tutorials](https://strapi.io/tutorials) - List of tutorials made by the core team and the community.
-- [Strapi blog](https://strapi.io/blog) - Official Strapi blog containing articles made by the Strapi team and the community.
-- [Changelog](https://strapi.io/changelog) - Find out about the Strapi product updates, new features and general improvements.
-
-Feel free to check out the [Strapi GitHub repository](https://github.com/strapi/strapi). Your feedback and contributions are welcome!
-
-## ✨ Community
-
-- [Discord](https://discord.strapi.io) - Come chat with the Strapi community including the core team.
-- [Forum](https://forum.strapi.io/) - Place to discuss, ask questions and find answers, show your Strapi project and get feedback or just talk with other Community members.
-- [Awesome Strapi](https://github.com/strapi/awesome-strapi) - A curated list of awesome things related to Strapi.
-
----
-
-<sub>🤫 Psst! [Strapi is hiring](https://strapi.io/careers).</sub>
