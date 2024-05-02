@@ -31,8 +31,7 @@ This project is designed to handle WebSocket messages and store them in a SQLite
 
 ## Structure
 - config/database.js: Configuration for SQLite database.
-- writeMessageToDb.js: Module for writing 
-- WebSocket messages to the database.
+- writeMessageToDb.js: Module for writing WebSocket messages to the database.
 - index.js: Strapi plugin for handling WebSocket communication.
 
 
